@@ -1,0 +1,323 @@
+/*all test done in remix online editor https://remix.ethereum.org/#optimize=false&version=soljson-v0.5.1+commit.c8a2cb62.js*/
+
+/* ------contract deployed------ */
+
+
+creation of KYCRepo pending...
+[vm]from:0xca3...a733cto:KYCRepo.(constructor)value:0 weidata:0x608...40029logs:0hash:0xefb...44143
+Debug
+ status 	0x1 Transaction mined and execution succeed
+ transaction hash 	0xefbb8f1f40b1e60002360dbd4a8919d247d76824cc7d60cd35e916cdd3e44143
+ contract address 	0x08970fed061e7747cd9a38d680a601510cb659fb
+ from 	0xca35b7d915458ef540ade6068dfe2f44e8fa733c
+ to 	KYCRepo.(constructor)
+ gas 	30000000000 gas
+        
+ transaction cost 	3707232 gas 
+ execution cost 	2796088 gas 
+ hash 	0xefbb8f1f40b1e60002360dbd4a8919d247d76824cc7d60cd35e916cdd3e44143
+ input 	0x608...40029
+ decoded input 	{}
+ decoded output 	 - 
+ logs 	[]
+ value 	0 wei
+        
+
+
+
+
+/* ------bank fuunctions------ */
+
+/*register bank <0x583031d1113ad414f02576bd6afabfb302140225,"UBI","UTBI101">*/
+
+transact to KYCRepo.registerBank pending ... 
+[vm]from:0xca3...a733cto:KYCRepo.registerBank(address,string,string) 0x089...659fbvalue:0 weidata:0xe24...00000logs:0hash:0x528...c05ee
+Debug
+ status 	0x1 Transaction mined and execution succeed
+ transaction hash 	0x528c1bb45a36f0dfb28f60786dffb4435f1cd2c2c0c4acf5a88c73a58edc05ee
+ from 	0xca35b7d915458ef540ade6068dfe2f44e8fa733c
+ to 	KYCRepo.registerBank(address,string,string) 0x08970fed061e7747cd9a38d680a601510cb659fb
+ gas 	30000000000 gas
+        
+ transaction cost 	128296 gas 
+ execution cost 	103952 gas 
+ hash 	0x528c1bb45a36f0dfb28f60786dffb4435f1cd2c2c0c4acf5a88c73a58edc05ee
+ input 	0xe24...00000
+ decoded input 	{
+	"address bad": "0x583031D1113aD414F02576BD6afaBfb302140225",
+	"string nm": "UBI",
+	"string ifs": "UTBI101"
+}
+ decoded output 	{}
+ logs 	[]
+ value 	0 wei
+        
+
+/*register using same address <0x583031d1113ad414f02576bd6afabfb302140225,"SBI","SBII101">*/
+
+transact to KYCRepo.registerBank pending ... 
+[vm]from:0xca3...a733cto:KYCRepo.registerBank(address,string,string) 0x089...659fbvalue:0 weidata:0xe24...00000logs:0hash:0x59d...6eb66
+Debug
+ status 	0x0 Transaction mined but execution failed
+ transaction hash 	0x59d63e82b6e096c08dcb441e9010fd1701be47170bc85616fdbeb7c11ea6eb66
+ from 	0xca35b7d915458ef540ade6068dfe2f44e8fa733c
+ to 	KYCRepo.registerBank(address,string,string) 0x08970fed061e7747cd9a38d680a601510cb659fb
+ gas 	30000000000 gas
+        
+ transaction cost 	26802 gas 
+ execution cost 	2458 gas 
+ hash 	0x59d63e82b6e096c08dcb441e9010fd1701be47170bc85616fdbeb7c11ea6eb66
+ input 	0xe24...00000
+ decoded input 	{
+	"address bad": "0x583031D1113aD414F02576BD6afaBfb302140225",
+	"string nm": "SBI",
+	"string ifs": "SBII101"
+}
+ decoded output 	{}
+ logs 	[]
+ value 	0 wei
+        
+transact to KYCRepo.registerBank errored: VM error: revert.
+revert	The transaction has been reverted to the initial state.
+Reason provided by the contract: "bank already registered!!".	Debug the transaction to get more information. 
+
+
+/*register using another account other then deployer account*/
+
+transact to KYCRepo.registerBank pending ... 
+[vm]from:0x4b0...4d2dbto:KYCRepo.registerBank(address,string,string) 0x089...659fbvalue:0 weidata:0xe24...00000logs:0hash:0x5a5...96bfe
+Debug
+ status 	0x0 Transaction mined but execution failed
+ transaction hash 	0x5a59840c4300caeceaf92be4b0799787cb065331606fbb85c367cb76b7196bfe
+ from 	0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db
+ to 	KYCRepo.registerBank(address,string,string) 0x08970fed061e7747cd9a38d680a601510cb659fb
+ gas 	30000000000 gas
+        
+ transaction cost 	25912 gas 
+ execution cost 	1568 gas 
+ hash 	0x5a59840c4300caeceaf92be4b0799787cb065331606fbb85c367cb76b7196bfe
+ input 	0xe24...00000
+ decoded input 	{
+	"address bad": "0x583031D1113aD414F02576BD6afaBfb302140225",
+	"string nm": "SBI",
+	"string ifs": "SBII101"
+}
+ decoded output 	{}
+ logs 	[]
+ value 	0 wei
+        
+transact to KYCRepo.registerBank errored: VM error: revert.
+revert	The transaction has been reverted to the initial state.
+Reason provided by the contract: "Only authority can use this function".	Debug the transaction to get more information. 
+
+
+/* ------customer functions------ */
+
+/*registration of user<"siddhartha chaki","9876543210","17/H/9,shivaji nagar, Mumbai-43">*/
+
+transact to KYCRepo.register pending ... 
+[vm]from:0xca3...a733cto:KYCRepo.register(string,string,string) 0x089...659fbvalue:0 weidata:0x4cd...43300logs:0hash:0xc28...fe1b3
+Debug
+ status 	0x1 Transaction mined and execution succeed
+ transaction hash 	0xc288a022f0078919b4695294196a5d9ed81298ed94a84aace8c4ba5b0effe1b3
+ from 	0xca35b7d915458ef540ade6068dfe2f44e8fa733c
+ to 	KYCRepo.register(string,string,string) 0x08970fed061e7747cd9a38d680a601510cb659fb
+ gas 	30000000000 gas
+        
+ transaction cost 	152397 gas 
+ execution cost 	125941 gas 
+ hash 	0xc288a022f0078919b4695294196a5d9ed81298ed94a84aace8c4ba5b0effe1b3
+ input 	0x4cd...43300
+ decoded input 	{
+	"string nm": "siddhartha chaki",
+	"string con": "9876543210",
+	"string ad": "17/H/9,shivaji nagar, Mumbai-43"
+}
+ decoded output 	{
+	"0": "address: 0x0000000000000000000000000000000000000000"
+}
+ logs 	[]
+ value 	0 wei
+        
+
+/*get non verified customer count */
+
+call to KYCRepo.getNonVerifiredCustomersCount
+CALL
+[call]from:0xca35b7d915458ef540ade6068dfe2f44e8fa733cto:KYCRepo.getNonVerifiredCustomersCount()data:0x3d9...f8692
+Debug
+ transaction hash 	0xfd83cf042a42557e78541e314246cc6335d4aff8e7322e98b87cd1d4291b72ba
+ from 	0xca35b7d915458ef540ade6068dfe2f44e8fa733c
+ to 	KYCRepo.getNonVerifiredCustomersCount() 0xbbf289d846208c16edc8474705c748aff07732db
+ transaction cost 	22018 gas (Cost only applies when called by a contract)
+ execution cost 	746 gas (Cost only applies when called by a contract)
+ hash 	0xfd83cf042a42557e78541e314246cc6335d4aff8e7322e98b87cd1d4291b72ba
+ input 	0x3d9...f8692
+ decoded input 	{}
+ decoded output 	{
+	"0": "uint256: 2"
+}
+ logs 	[]
+
+
+/*get verified customer */
+call to KYCRepo.getVerifiredCustomersCount
+CALL
+[call]from:0xca35b7d915458ef540ade6068dfe2f44e8fa733cto:KYCRepo.getVerifiredCustomersCount()data:0x8be...22947
+Debug
+ transaction hash 	0x6d577ca4549cf9d326fba8d968b4681a218789898f1e2f3eda281d077466913e
+ from 	0xca35b7d915458ef540ade6068dfe2f44e8fa733c
+ to 	KYCRepo.getVerifiredCustomersCount() 0xbbf289d846208c16edc8474705c748aff07732db
+ transaction cost 	22128 gas (Cost only applies when called by a contract)
+ execution cost 	856 gas (Cost only applies when called by a contract)
+ hash 	0x6d577ca4549cf9d326fba8d968b4681a218789898f1e2f3eda281d077466913e
+ input 	0x8be...22947
+ decoded input 	{}
+ decoded output 	{
+	"0": "uint256: 0"
+}
+ logs 	[]
+
+ /*verification of customer 1 */
+
+ transact to KYCRepo.verificationDoneCusomer pending ... 
+[vm]from:0xca3...a733cto:KYCRepo.verificationDoneCusomer(uint256) 0xbbf...732dbvalue:0 weidata:0x23a...00001logs:0hash:0x026...a05de
+Debug
+ status 	0x1 Transaction mined and execution succeed
+ transaction hash 	0x0266233e8dbdd2f20404456315501f640d0720910138d6644cfe2caf966a05de
+ from 	0xca35b7d915458ef540ade6068dfe2f44e8fa733c
+ to 	KYCRepo.verificationDoneCusomer(uint256) 0xbbf289d846208c16edc8474705c748aff07732db
+ gas 	30000000 gas
+        
+ transaction cost 	71511 gas 
+ execution cost 	50047 gas 
+ hash 	0x0266233e8dbdd2f20404456315501f640d0720910138d6644cfe2caf966a05de
+ input 	0x23a...00001
+ decoded input 	{
+	"uint256 custnumber": "1"
+}
+ decoded output 	{}
+ logs 	[]
+ value 	0 wei
+        
+
+/*get verified customer*/
+
+call to KYCRepo.getVerifiedCutomerAddress
+CALL
+[call]from:0xca35b7d915458ef540ade6068dfe2f44e8fa733cto:KYCRepo.getVerifiedCutomerAddress(uint256)data:0x74c...00000
+Debug
+ transaction hash 	0x9a883ef4ee2a4376ebef468ca0beb8e48db773a247cd4f70c60dd9d2f139667f
+ from 	0xca35b7d915458ef540ade6068dfe2f44e8fa733c
+ to 	KYCRepo.getVerifiedCutomerAddress(uint256) 0xbbf289d846208c16edc8474705c748aff07732db
+ transaction cost 	24902 gas (Cost only applies when called by a contract)
+ execution cost 	3502 gas (Cost only applies when called by a contract)
+ hash 	0x9a883ef4ee2a4376ebef468ca0beb8e48db773a247cd4f70c60dd9d2f139667f
+ input 	0x74c...00000
+ decoded input 	{
+	"uint256 i": "0"
+}
+ decoded output 	{
+	"0": "address: 0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c",
+	"1": "string: Gobinda chaki"
+}
+ logs 	[]
+
+/*disable customer*/
+
+transact to KYCRepo.disableCustomer pending ... 
+[vm]from:0xca3...a733cto:KYCRepo.disableCustomer(address) 0xbbf...732dbvalue:0 weidata:0xebe...a733clogs:0hash:0x775...d4887
+Debug
+ status 	0x1 Transaction mined and execution succeed
+ transaction hash 	0x7757d01e245edbea7f4126a3ec98cbbcb4da49bb6ebd2eeca3e1f75de0dd4887
+ from 	0xca35b7d915458ef540ade6068dfe2f44e8fa733c
+ to 	KYCRepo.disableCustomer(address) 0xbbf289d846208c16edc8474705c748aff07732db
+ gas 	30000000 gas
+        
+ transaction cost 	29267 gas 
+ execution cost 	6587 gas 
+ hash 	0x7757d01e245edbea7f4126a3ec98cbbcb4da49bb6ebd2eeca3e1f75de0dd4887
+ input 	0xebe...a733c
+ decoded input 	{
+	"address cust": "0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c"
+}
+ decoded output 	{}
+ logs 	[]
+ value 	0 wei
+        
+
+/*get customer details after disable*/
+
+call to KYCRepo.getVerifireCustomers
+CALL
+[call]from:0xca35b7d915458ef540ade6068dfe2f44e8fa733cto:KYCRepo.getVerifireCustomers(address)data:0xbe6...a733c
+Debug
+ transaction hash 	0xad3f9076d74c0022922eaa3164fc7dba163568b0397bd7c4926a3c60ed2130a0
+ from 	0xca35b7d915458ef540ade6068dfe2f44e8fa733c
+ to 	KYCRepo.getVerifireCustomers(address) 0xbbf289d846208c16edc8474705c748aff07732db
+ transaction cost 	24283 gas (Cost only applies when called by a contract)
+ execution cost 	1603 gas (Cost only applies when called by a contract)
+ hash 	0xad3f9076d74c0022922eaa3164fc7dba163568b0397bd7c4926a3c60ed2130a0
+ input 	0xbe6...a733c
+ decoded input 	{
+	"address adr": "0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c"
+}
+ decoded output 	{
+	"error": "Failed to decode output: Error: Number can only safely store up to 53 bits"
+}
+ logs 	[]
+call to KYCRepo.getVerifireCustomers errored: VM error: revert.
+revert	The transaction has been reverted to the initial state.
+Reason provided by the contract: "Customer is disabled".	Debug the transaction to get more information. 
+
+
+/*Enable customer*/
+
+transact to KYCRepo.enableCustomer pending ... 
+[vm]from:0xca3...a733cto:KYCRepo.enableCustomer(address) 0xbbf...732dbvalue:0 weidata:0x891...a733clogs:0hash:0x45b...006bc
+Debug
+ status 	0x1 Transaction mined and execution succeed
+ transaction hash 	0x45b2e46ff1e4ce66aabdf22ca2b7de9730e25cee555e5dc0ebd0e676b47006bc
+ from 	0xca35b7d915458ef540ade6068dfe2f44e8fa733c
+ to 	KYCRepo.enableCustomer(address) 0xbbf289d846208c16edc8474705c748aff07732db
+ gas 	30000000 gas
+        
+ transaction cost 	29157 gas 
+ execution cost 	6477 gas 
+ hash 	0x45b2e46ff1e4ce66aabdf22ca2b7de9730e25cee555e5dc0ebd0e676b47006bc
+ input 	0x891...a733c
+ decoded input 	{
+	"address cust": "0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c"
+}
+ decoded output 	{}
+ logs 	[]
+ value 	0 wei
+        
+
+/*get customer details*/
+
+call to KYCRepo.getVerifireCustomers
+CALL
+[call]from:0xca35b7d915458ef540ade6068dfe2f44e8fa733cto:KYCRepo.getVerifireCustomers(address)data:0xbe6...a733c
+Debug
+ transaction hash 	0x7a64f6a430ab8888bece5f1bee17fca7a0a41d6f7d017732f8f6428b9ecd6a09
+ from 	0xca35b7d915458ef540ade6068dfe2f44e8fa733c
+ to 	KYCRepo.getVerifireCustomers(address) 0xbbf289d846208c16edc8474705c748aff07732db
+ transaction cost 	29875 gas (Cost only applies when called by a contract)
+ execution cost 	7195 gas (Cost only applies when called by a contract)
+ hash 	0x7a64f6a430ab8888bece5f1bee17fca7a0a41d6f7d017732f8f6428b9ecd6a09
+ input 	0xbe6...a733c
+ decoded input 	{
+	"address adr": "0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c"
+}
+ decoded output 	{
+	"0": "address: 0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c",
+	"1": "string: Gobinda chaki",
+	"2": "string: 9876543210",
+	"3": "string: 17/H/9,shivaji nagar, Mumbai-43"
+}
+ logs 	[]
+
+
+
+        
